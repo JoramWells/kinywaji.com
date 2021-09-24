@@ -1,9 +1,8 @@
 import React from 'react'
 import { Text, StyleSheet, SafeAreaView, TextInput } from 'react-native'
-
 const Navbar = () => {
     return (
-        <SafeAreaView style={styles.navbar}>
+        <SafeAreaView style = {styles.navbar}>
             <Text style={styles.navtext}>Kinywaji</Text>
                 <TextInput style={styles.input} placeholder="Search..." />
         </SafeAreaView>
@@ -16,16 +15,21 @@ const styles = StyleSheet.create({
         padding: 10,
         marginTop:24,
         flexDirection:'row',
-        justifyContent:'space-between'
+        justifyContent:'space-between',
+        alignItems:'center'
     },
     navtext: {
         color: 'white',
-        fontSize:18,
-        fontWeight:'bold'
+        fontSize:22,
+        fontWeight:'bold',
+        marginRight:10
     },
     input:{
         backgroundColor:'white',
-        flex: 1
+        flex: 1,
+        borderRadius:5,
+        padding: 5,
+        fontSize:18
     }
 })
 

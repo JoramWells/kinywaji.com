@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, StatusBar } from 'react-native';
-import {Provider} from 'react-redux'
+import { Provider } from 'react-redux'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
 import HomeScreen from './screens/HomeScreen';
 import { store } from './store';
 
@@ -8,7 +9,9 @@ console.log(StatusBar.currentHeight)
 export default function App() {
   return (
     <Provider store={store} style={styles.container}>
-      <HomeScreen/>
+      <SafeAreaProvider>
+        <HomeScreen />
+      </SafeAreaProvider>
     </Provider>
   );
 }
