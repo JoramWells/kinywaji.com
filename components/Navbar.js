@@ -1,10 +1,15 @@
 import React from 'react'
-import { Text, StyleSheet, TextInput } from 'react-native'
+import { Text, StyleSheet, TextInput, View } from 'react-native'
+import { Icon } from 'react-native-elements'
 const Navbar = () => {
     return (
         <View style={styles.navbar}>
-            <Text style={styles.navtext}>Kinywaji</Text>
             <TextInput style={styles.input} placeholder="Search..." />
+            <Icon
+                type="antdesign"
+                name="shoppingcart"
+                color="white"
+            />
         </View>
     )
 }
@@ -28,7 +33,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         flex: 1,
         borderRadius: 5,
-        padding: 5,
+        padding: 4,
         fontSize: 18
     }
 })

@@ -1,7 +1,7 @@
 import React from 'react'
-import { View, Text, StyleSheet, FlatList, TouchableOpacity,Image } from 'react-native'
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, Image } from 'react-native'
 import tw from 'tailwind-react-native-classnames'
-import {Icon} from 'react-native-vector-icons'
+import { Icon } from 'react-native-elements'
 const data = [{
     title: 'Anise Aroma', url: 'https://i1.wp.com/kinywaji.com/wp-content/uploads/2021/03/chianti.jpg?ssl=1',
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
@@ -26,16 +26,25 @@ const RecentDrinks = () => {
                 <Text style={styles.containertext}>
                     Your Favourite drinks
                 </Text>
+                <TouchableOpacity>
+                    <Icon
+                        type="antdesign"
+                        name="arrowright"
+                        color="white"
+                        style={tw`p-2 bg-black rounded-full w-10`}
+                    />
+                </TouchableOpacity>
+
             </View>
             <View>
                 <FlatList
                     data={data}
-                    keyExtractor={(item) => item.id}
+                    keyExtractor={(item) => item.id.toString()}
                     horizontal
                     renderItem={({ item }) => (
-                        <TouchableOpacity style = {tw`bg-gray-100 `}>
+                        <TouchableOpacity style={tw`bg-gray-100 `}>
                             <View style={styles.items}>
-                                <Image source={{uri:item.url}} style={{width:100, height:100, resizeMode:'contain'}} />
+                                <Image source={{ uri: item.url }} style={{ width: 100, height: 100, resizeMode: 'contain' }} />
                                 <Text style={styles.text}>{item.title}</Text>
                             </View>
                         </TouchableOpacity>
@@ -51,7 +60,10 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: 'gray',
         margin: 5,
-        padding: 10,
+        padding: 3,
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        alignItems: 'center'
 
     },
     containertext: {
@@ -59,13 +71,13 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 18
     },
-    items:{
-        justifyContent:'center',
-        alignItems:'center'
+    items: {
+        justifyContent: 'center',
+        alignItems: 'center'
     },
-    text:{
-        fontSize:16,
-        fontWeight:'400',
+    text: {
+        fontSize: 16,
+        fontWeight: '400',
         color: 'gray'
     }
 })
