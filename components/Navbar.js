@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     input: {
         backgroundColor: 'white',
         flex: 1,
-        borderRadius: 5,
+        borderRadius: 100,
         padding: 4,
         fontSize: 18
     }
