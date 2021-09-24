@@ -9,9 +9,10 @@ console.log(StatusBar.currentHeight)
 export default function App() {
   return (
     <Provider store={store} style={styles.container}>
-      <SafeAreaProvider>
+      <Text>wtf</Text>
+      {/* <View>
         <HomeScreen />
-      </SafeAreaProvider>
+      </View> */}
     </Provider>
   );
 }

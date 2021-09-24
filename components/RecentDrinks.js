@@ -1,7 +1,7 @@
 import React from 'react'
-import { View, Text, StyleSheet, SafeAreaView, FlatList, TouchableOpacity,Image } from 'react-native'
+import { View, Text, StyleSheet, FlatList, TouchableOpacity,Image } from 'react-native'
 import tw from 'tailwind-react-native-classnames'
-
+import {Icon} from 'react-native-vector-icons'
 const data = [{
     title: 'Anise Aroma', url: 'https://i1.wp.com/kinywaji.com/wp-content/uploads/2021/03/chianti.jpg?ssl=1',
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
@@ -21,7 +21,7 @@ const data = [{
 
 const RecentDrinks = () => {
     return (
-        <SafeAreaView>
+        <View>
             <View style={styles.container}>
                 <Text style={styles.containertext}>
                     Your Favourite drinks
@@ -43,7 +43,7 @@ const RecentDrinks = () => {
 
                 />
             </View>
-        </SafeAreaView>
+        </View>
 
     )
 }

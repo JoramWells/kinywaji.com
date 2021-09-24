@@ -1,14 +1,14 @@
 import React from 'react'
-import {  Text, SafeAreaView, StyleSheet, StatusBar } from 'react-native'
+import {  Text,View, StyleSheet, StatusBar } from 'react-native'
 import Navbar from '../components/Navbar'
 import RecentDrinks from '../components/RecentDrinks'
 
 const HomeScreen = () => {
     return (
-        <SafeAreaView styles={styles.container}>
+        <View >
             <Navbar/>
             <RecentDrinks />
-        </SafeAreaView>
+        </View>
     )
 }
 const styles = StyleSheet.create({
