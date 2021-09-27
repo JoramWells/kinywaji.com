@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, FlatList, TouchableOpacity, Image } from 'react
 import tw from 'tailwind-react-native-classnames'
 import { Icon } from 'react-native-elements'
 import { useNavigation } from '@react-navigation/core'
+import Banner from './Banner'
 const data = [{
     title: 'Anise Aroma', url: 'https://i1.wp.com/kinywaji.com/wp-content/uploads/2021/03/chianti.jpg?ssl=1',
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
@@ -20,28 +21,11 @@ const data = [{
     id: 3
 }]
 
-const RecentDrinks = () => {
+const RecentDrinks = ({title}) => {
     const navigation = useNavigation()
     return (
         <View>
-            <View style={[tw `shadow-sm bg-gray-700`,styles.container]}>
-                <Text style={[styles.containertext]}>
-                    Your Favourite drinks
-                </Text>
-                <TouchableOpacity
-                        onPress={() => navigation.navigate('ProductScreen')}
-                
-                >
-                    <Icon
-                        type="antdesign"
-                        name="arrowright"
-                        color="white"
-                        style={tw`p-2 bg-black rounded-full w-10 bg-opacity-10`}
-
-                    />
-                </TouchableOpacity>
-
-            </View>
+            <Banner title={title} icon/>
             <View>
                 <FlatList
                     data={data}

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Text, View, StyleSheet, StatusBar, ScrollView } from 'react-native'
+import Banner from '../components/Banner'
 import BottomNavigation from '../components/BottomNavigation'
 import MoreItems from '../components/MoreItems'
-import MoreItemsBanner from '../components/MoreItemsBanner'
 import Navbar from '../components/Navbar'
 import RecentDrinks from '../components/RecentDrinks'
 
@@ -11,8 +11,13 @@ const HomeScreen = () => {
         <>
             <Navbar />
             <ScrollView >
-                <RecentDrinks />
-                <MoreItemsBanner />
+                <RecentDrinks title={'Recent drinks'} />
+                <RecentDrinks title={'Wines'} />
+                <RecentDrinks title={'Whisky'} />
+                <RecentDrinks title={'Spirits'} />
+                <RecentDrinks title={'Beer'} />
+                <RecentDrinks title={'Food Bar'} />
+                <Banner title="More Drinks for you" />
                 <MoreItems />
             </ScrollView>
             <BottomNavigation/>

@@ -2,6 +2,7 @@ import { useNavigation } from '@react-navigation/core'
 import React, { useEffect, useState } from 'react'
 import { View, Text, StyleSheet, ActivityIndicator, FlatList, Image } from 'react-native'
 import axios from 'axios'
+import tw from 'tailwind-react-native-classnames'
 
 const MoreItems = () => {
     const numColumns = 3
@@ -16,14 +17,19 @@ const MoreItems = () => {
     const renderItem = ({ item }) => {
         return (
             <View style={styles.itemWrapper}>
+                <View>
                 <Image source={{uri:item.picture.large}} style={styles.image} />
+                <View style={[tw`bg-red-900 bg-opacity-50`,{position:'absolute'}]}>
+                    <Text style={[tw`font-bold text-white`]}>-20%</Text>
+                </View>
+                </View>
                 <View style={styles.cardBody}>
                     <Text style={styles.name}>
                         {`${item.name.title} ${item.name.first} ${item.name.last}`}
                     </Text>
-                    <Text style={styles.content}>
+                    {/* <Text style={styles.content}>
                         {item.email}
-                    </Text>
+                    </Text> */}
                 </View>
                 <View style={styles.cardFooter}>
                     <Text style={styles.cardText}>
@@ -136,7 +142,7 @@ const styles = StyleSheet.create({
     },
     cardBody: {
         padding: 10,
-        height: 70
+        // height: 20
     },
     cardFooter: {
         margin: 5,

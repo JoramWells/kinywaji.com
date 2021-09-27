@@ -1,18 +1,21 @@
-import React from 'react';
-import { StyleSheet, Text, StatusBar } from 'react-native';
-import { Provider } from 'react-redux'
-import { SafeAreaProvider } from 'react-native-safe-area-context'
-import 'react-native-gesture-handler'
-import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
-import HomeScreen from './screens/HomeScreen';
-import { store } from './store';
-import ProductScreen from './screens/ProductScreen';
-import AccountScreen from './screens/AccountScreen';
+import React from "react";
+import { StyleSheet, Text, StatusBar } from "react-native";
+import { Provider } from "react-redux";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import "react-native-gesture-handler";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import HomeScreen from "./screens/HomeScreen";
+import { store } from "./store";
+import ProductScreen from "./screens/ProductScreen";
+import AccountScreen from "./screens/AccountScreen";
+import Login from "./screens/accounts/Login";
+import Register from "./screens/accounts/Register";
+import ManageScreen from "./screens/ManageScreen";
 
-console.log(StatusBar.currentHeight)
+console.log(StatusBar.currentHeight);
 export default function App() {
-  const Stack = createStackNavigator()
+  const Stack = createStackNavigator();
   return (
     <Provider store={store} style={styles.container}>
       <NavigationContainer>
@@ -22,29 +25,53 @@ export default function App() {
               name="HomeScreen"
               component={HomeScreen}
               options={{
-                headerShown: false
+                headerShown: false,
               }}
             />
             <Stack.Screen
               name="ProductScreen"
               component={ProductScreen}
               options={{
-                headerShown: false
+                headerShown: false,
               }}
             />
             <Stack.Screen
               name="AccountScreen"
               component={AccountScreen}
               options={{
-                headerShown: false
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="LoginScreen"
+              component={Login}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="RegisterScreen"
+              component={Register}
+              options={{
+                headerShown: false,
+                headerStyle:{
+                  backgroundColor:'black'
+                },
+                headerLeft:()=>{
+                  <View><Text>hey</Text></View>
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ManageScreen"
+              component={ManageScreen}
+              options={{
+                headerShown: false,
               }}
             />
           </Stack.Navigator>
-
-
         </SafeAreaProvider>
       </NavigationContainer>
-
     </Provider>
   );
 }
@@ -52,9 +79,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: StatusBar.currentHeight
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: StatusBar.currentHeight,
   },
 });
